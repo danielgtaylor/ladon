@@ -95,12 +95,12 @@ function render(filename, relStart, doQuote, template) {
     var q = doQuote ? quote : function (s) { return s; };
 
     return template
-        .replace('FULLPATH', q(filename))
-        .replace('DIRNAME', q(path.dirname(filename)))
-        .replace('BASENAME', q(path.basename(filename, ext)))
-        .replace('EXT', q(ext))
-        .replace('RELDIR', q(path.dirname(filename).substr(relStart)))
-        .replace('RELPATH', q(filename.substr(relStart)));
+        .replace(new RegExp('FULLPATH', 'g'), q(filename))
+        .replace(new RegExp('DIRNAME', 'g'), q(path.dirname(filename)))
+        .replace(new RegExp('BASENAME', 'g'), q(path.basename(filename, ext)))
+        .replace(new RegExp('EXT', 'g'), q(ext))
+        .replace(new RegExp('RELDIR', 'g'), q(path.dirname(filename).substr(relStart)))
+        .replace(new RegExp('RELPATH', 'g'), q(filename.substr(relStart)));
 }
 
 // Find and process files
