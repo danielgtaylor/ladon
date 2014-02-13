@@ -7,7 +7,7 @@ Ladon is named after the multiheaded serpent dragon from Greek mythology, slain 
 Features
 --------
 * Supports Windows, Mac OS X, Linux, etc
-* Select files via a simple glob
+* Select files via a simple [glob](https://www.npmjs.org/package/glob)
 * Autodetects system CPU count
 * Configurable parallel process count
 * Simple command template syntax
@@ -36,8 +36,56 @@ ladon "~/Documents/**/*.pdf" -- shasum FULLPATH >hashes.txt
 ladon -m thumbs/RELDIR "**/*.jpg" -- convert FULLPATH -thumbnail 100x100^ -gravity center -extent 100x100 thumbs/RELNAME'
 ```
 
-Variables
----------
+You can also replace common `bash`-isms with true parallel processing:
+
+```bash
+# Typical bash for loop
+for f in ~/Music/*.wav; do lame -V 2 $f ${f%.*}.mp3; done
+
+# Parallelized via ladon to use all CPUs
+ladon "~/Music/*.wav" -- lame -V 2 FULLPATH DIRNAME/BASENAME.mp3
+```
+
+Tutorial
+--------
+The following is a brief walkthrough of how to use `ladon`.
+
+### Command Structure
+The basic command structure consists of two parts that are split by `--`. The first part consists of the `ladon` command and its options, while the second consists of the command you want to run in parallel. The only required `ladon` option is a file selector glob.
+
+```bash
+ladon [options] glob -- command
+```
+
+Ladon works by selecting files via a glob, which supports wildcards like `*` and `**` to match any file or any directory recursively. For example, `*.txt` would select all the text files in the current directory, while `**/*.txt` would select all the text files in the current directory __and__ any child directories. [Read the full glob syntax](https://www.npmjs.org/package/glob).
+
+The second half of the command structure is the command you wish to run in parallel over the selected files. It can be anything you want and can use special variables (documented below).
+
+### Using Variables
+A full variable reference can be found below. The most common use case is to get the full path to a file that you wish to process, and this can be done via the `FULLPATH` variable. For example, to print out the full path to each file that is selected by your glob:
+
+```bash
+ladon "*" -- echo FULLPATH
+```
+
+You can also safely mix variables with normal text to construct new paths:
+
+```bash
+ladon "*" -- echo RELDIR/BASENAME.zip
+```
+
+### Making Directories
+Many commands will generate a new file. Sometimes you want to overwrite existing files, but other times you'd rather create a copy. Ladon has built-in support for a templated `mkdir -p` feature which will recursively ensure directories exist before running your command on a selected file. The `RELDIR` variable is very useful here. This is perhaps best illustrated via example:
+
+```bash
+# Recursively copy all files and keep directory structure
+ladon -m foo/RELDIR "myfiles/**/*" -- cp FULLPATH foo/RELPATH
+```
+
+In the example above every file and directory in the `myfiles` directory will be copied over to the new directory `foo`. If there is a `myfiles/docs/test.txt` then there will be a `foo/docs/test.txt` file created.
+
+Variable Reference
+------------------
 The following variables can be used in both the command and the directory name when using the `--makedirs` option. The examples below assume that the _current working directory_ is `/home/dan/`.
 
 | __Variable__ | __Description__                               | __Example__               |
