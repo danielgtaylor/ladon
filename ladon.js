@@ -121,7 +121,7 @@ glob(argv._[0], {
             }
 
             if (argv.verbose)
-                console.error("Processing " + filename);
+                console.error("Processing " + filename + '\n' + cmd);
 
             // Run the command and dump the output
             exec(cmd, function(err, stdout, stderr) {
