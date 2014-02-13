@@ -1,0 +1,33 @@
+{
+  "name": "ladon",
+  "version": "1.0.0",
+  "description": "Run commands in parallel on many files",
+  "main": "ladon.js",
+  "bin": {
+    "ladon": "ladon.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel G. Taylor",
+  "license": "MIT",
+  "dependencies": {
+    "async": "~0.2.10",
+    "mkdirp": "~0.3.5",
+    "yargs": "~1.0.15",
+    "glob": "~3.2.8"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielgtaylor/ladon.git"
+  },
+  "keywords": [
+    "parallel",
+    "process"
+  ],
+  "bugs": {
+    "url": "https://github.com/danielgtaylor/ladon/issues"
+  },
+  "homepage": "https://github.com/danielgtaylor/ladon"
+}
