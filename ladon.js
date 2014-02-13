@@ -78,10 +78,13 @@ if (argv._[0][0] == '~') {
     argv._[0] = (process.env.HOME || process.env.USERPROFILE) + argv._[0].substr(1);
 }
 
+// Resolve full path to glob
+argv._[0] = path.resolve(argv._[0]);
+
 // Get relative start position for paths for RELDIR and RELNAME
 var relativeStart = argv._[0].indexOf('**');
 if (relativeStart == -1) {
-    relativeStart = process.cwd().length;
+    relativeStart = process.cwd().length + 1;
 }
 
 // Surround a string with quotes
