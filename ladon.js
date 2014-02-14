@@ -57,14 +57,14 @@ parser.help = function () {
         var str = '  ' + x[0];
 
         for (var i = x[0].length; i < 10; i++) {
-            str += ' '
+            str += ' ';
         }
 
         return str + x[1];
     }).join('\n');
 
     return helpStr;
-}
+};
 
 argv = parser.argv;
 
@@ -111,6 +111,9 @@ glob(argv._[0], {
         nocase: true
     }, function(err, filenames) {
         var _process;
+
+        if (err)
+            return console.error(err);
 
         if (argv.verbose)
             console.error('Processing ' + filenames.length + ' files...');
