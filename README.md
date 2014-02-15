@@ -100,6 +100,28 @@ The following variables can be used in both the command and the directory name w
 | RELDIR       | Relative directory name                       | `books`                   |
 | RELPATH      | Relative file path                            | `books/foo.txt`           |
 
+Use as a Library
+----------------
+You can also use ladon as a basic library in Node.js.
+
+```bash
+npm install ladon
+```
+
+Then, just `require` and use it:
+
+```javascript
+var ladon = require('ladon');
+
+// The command parser (based on yargs)
+var args = ladon.parser.parse(['ladon', '**/*.txt', '--', 'echo', 'FULLPATH']);
+
+// Run the command
+ladon.run(args, function (err) {
+    if (err) console.error(err.toString());
+});
+```
+
 Alternatives
 ------------
 
