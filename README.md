@@ -1,5 +1,8 @@
 Ladon
 =====
+
+[![Dependency Status](https://david-dm.org/danielgtaylor/ladon.png)](https://david-dm.org/danielgtaylor/ladon) [![Build Status](https://travis-ci.org/danielgtaylor/ladon.png?branch=master)](https://travis-ci.org/danielgtaylor/ladon) [![NPM version](https://badge.fury.io/js/ladon.png)](http://badge.fury.io/js/Ladon)
+
 A small, simple utility to process many files in parallel. It is meant for people comfortable with using a terminal but strives to be as easy to use as humanly possible.
 
 Ladon is named after the multiheaded serpent dragon from Greek mythology, slain by Heracles and thrust into the sky as the constellation Draco. His many heads allow you to efficiently work on many files at once.
