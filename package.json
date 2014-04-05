@@ -1,6 +1,6 @@
 {
   "name": "ladon",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Run commands in parallel on many files",
   "main": "ladon.js",
   "bin": {
@@ -13,13 +13,13 @@
   "author": "Daniel G. Taylor",
   "license": "MIT",
   "dependencies": {
-    "async": "~0.2.10",
+    "async": "^0.6.2",
     "mkdirp": "~0.3.5",
-    "yargs": "~1.1.2",
+    "yargs": "^1.2.1",
     "glob": "~3.2.8"
   },
   "devDependencies": {
-    "mocha": "~1.17.1"
+    "mocha": "^1.18.2"
   },
   "repository": {
     "type": "git",
