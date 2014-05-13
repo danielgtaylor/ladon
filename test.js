@@ -14,9 +14,9 @@ describe ('ladon', function () {
 
     it ('Should render a template with variables', function () {
         var filename, rendered, template;
-        
+
         filename = '/home/dan/books/test.txt';
-        template = 'FULLPATH'
+        template = 'FULLPATH';
         rendered = ladon.render(filename, 10, false, template);
 
         assert.equal(filename, rendered);
@@ -41,7 +41,7 @@ describe ('ladon', function () {
         ladon.parser.showHelp = function () {};
         ladon.run({'_':[]}, function (err) {
             ladon.parser.showHelp = showHelp;
-            
+
             assert(err);
 
             done();
@@ -63,11 +63,11 @@ describe ('ladon', function () {
             tmp.GlobCalled = true;
             globDone(null, ['test.js', 'test2.js']);
             return {};
-        }
+        };
 
         // Mock exec
         child_process = require('child_process');
-        tmp.exec = child_process.exec
+        tmp.exec = child_process.exec;
         child_process.exec = function (cmd, execDone) {
             tmp.execCalled = true;
             execDone(null, '', '');
