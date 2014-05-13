@@ -70,7 +70,7 @@ parser.help = function () {
         ['RELDIR', 'Relative directory name'],
         ['RELPATH', 'Relative file path']
     ];
-    
+
     helpStr += '\n\nVariables:\n';
     helpStr += variables.map(function (x) {
         var str = '  ' + x[0];
