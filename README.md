@@ -30,7 +30,7 @@ The following are some examples of what is possible:
 
 ```bash
 # Print all text file names relative to the current directory
-ladon "**/*.txt" -- echo RELNAME
+ladon "**/*.txt" -- echo RELPATH
 
 # Calculate SHA1 sums of all your PDFs and save them in a file
 ladon "~/Documents/**/*.pdf" -- shasum FULLPATH >hashes.txt
