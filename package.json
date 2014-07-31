@@ -1,7 +1,7 @@
 {
   "name": "ladon",
   "version": "1.0.5",
-  "description": "Run commands in parallel on many files",
+  "description": "Run commands in parallel on many files, like GNU parallel",
   "main": "ladon.js",
   "bin": {
     "ladon": "ladon.js"
