@@ -1,7 +1,7 @@
 Ladon
 =====
 
-[![Dependency Status](https://david-dm.org/danielgtaylor/ladon.png)](https://david-dm.org/danielgtaylor/ladon) [![Build Status](https://travis-ci.org/danielgtaylor/ladon.png?branch=master)](https://travis-ci.org/danielgtaylor/ladon) [![NPM version](https://badge.fury.io/js/ladon.png)](http://badge.fury.io/js/Ladon)
+[![Dependency Status](http://img.shields.io/david/danielgtaylor/ladon.svg?style=flat)](https://david-dm.org/danielgtaylor/ladon) [![Build Status](http://img.shields.io/travis/danielgtaylor/ladon.svg?style=flat)](https://travis-ci.org/danielgtaylor/ladon) [![NPM version](http://img.shields.io/npm/v/ladon.svg?style=flat)](https://www.npmjs.org/package/ladon) [![NPM license](http://img.shields.io/npm/l/ladon.svg?style=flat)](https://www.npmjs.org/package/ladon)
 
 A small, simple utility to process many files in parallel. It is meant for people comfortable with using a terminal but strives to be as easy to use as humanly possible.
 
