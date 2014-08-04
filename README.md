@@ -36,7 +36,7 @@ ladon "**/*.txt" -- echo RELPATH
 ladon "~/Documents/**/*.pdf" -- shasum FULLPATH >hashes.txt
 
 # Generate thumbnails with ImageMagick and keep directory structure
-ladon -m thumbs/RELDIR "**/*.jpg" -- convert FULLPATH -thumbnail 100x100^ -gravity center -extent 100x100 thumbs/RELNAME'
+ladon -m thumbs/RELDIR "**/*.jpg" -- convert FULLPATH -thumbnail 100x100^ -gravity center -extent 100x100 thumbs/RELPATH
 ```
 
 You can also replace common `bash`-isms with true parallel processing:
